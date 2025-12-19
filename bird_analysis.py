@@ -116,5 +116,5 @@ class BirdAnalyzer:
             "counts": counts, # Time series of counts
             "tracks_sample": tracks_sample,
             "weight_estimates": final_weights,
-            "artifacts": [output_path]
+            "output": [output_path]
         }

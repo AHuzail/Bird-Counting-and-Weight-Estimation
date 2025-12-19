@@ -8,11 +8,11 @@ from bird_analysis import BirdAnalyzer
 
 app = FastAPI()
 
-# Temporary storage for uploaded files and artifacts
+# Temporary storage for uploaded files and output
 UPLOAD_DIR = "uploads"
-ARTIFACTS_DIR = "artifacts"
+OUTPUT_DIR = "Outputs"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
-os.makedirs(ARTIFACTS_DIR, exist_ok=True)
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
 try:
@@ -44,7 +44,7 @@ async def analyze_video(
     
     # Define output path
     output_filename = f"annotated_{file.filename}"
-    output_path = os.path.join(ARTIFACTS_DIR, output_filename)
+    output_path = os.path.join(OUTPUT_DIR, output_filename)
     
     try:
         results = analyzer.process_video(
